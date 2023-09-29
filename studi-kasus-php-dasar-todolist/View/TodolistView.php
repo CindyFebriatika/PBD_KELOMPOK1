@@ -46,7 +46,7 @@ namespace View {
         {
             echo "MENGHAPUS TODO".PHP_EOL;
 
-            echo = InputHelper:: input("Todo (x untuk batal)");
+            $todo = InputHelper:: input("Todo (x untuk batal)");
         if ($todo == "x"){
             echo "Batal menambah todo". PHP_EOL;
         } else{
