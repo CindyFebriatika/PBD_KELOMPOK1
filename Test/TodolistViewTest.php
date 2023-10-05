@@ -1,68 +1,65 @@
 <?php
 
-require_once _DIR_ . "/../Entity/Todolist.php";
-require_once _DIR_ . "/../Repository/TodolistRepository.php";
-require_once _DIR_ . "/../service/TodolistService.php";
-require_once _DIR_ . "/../View/TodolistView.php";
-require_once _DIR_ . "/../Helper/InputHelper.php";
+require_once DIR . "/../Entity/Todolist.php";
+require_once DIR . "/../Repository/TodolistRepository.php";
+require_once DIR . "/../Service/TodolistService.php";
+require_once DIR . "/../Config/Database.php";
+require_once DIR . "/../View/TodolistView.php";
+require_once DIR . "/../Helper/TodolistHelper.php";
 
 use Entity\Todolist;
-use \Repository\TodolistRepositorylmpl;
-use \Service\TodolistServicelmpl;
-use \View\TodolistView;
+use \Service\TodolistServiceImpl;
+use \Repository\TodolistRepositoryImpl;
+use \view\TodolistView;
 
-function testViewShowTodolist():void
+function testViewShowTodolist(): void
 {
+   
     $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicelmpl($todolistRepository);
+    $todolistService = new TodolistServiceImpl($todolistRepository);
     $todolistView = new TodolistView($todolistService);
+
     $todolistService->addTodolist("Belajar PHP");
     $todolistService->addTodolist("Belajar PHP OOP");
     $todolistService->addTodolist("Belajar PHP Database");
 
-    $todolistView->showTodolist();
-
+    $todolistService->showTodolist();
 }
 
-function testViewAddTodolist():void
+function testViewAddTodolist(): void
 {
     $todolistRepository = new TodolistRepositoryImpl();
-    $todolistService = new TodolistServicelmpl($todoListRepository);
+    $todolistService = new TodolistServiceImpl($todolistRepository);
     $todolistView = new TodolistView($todolistService);
+
     $todolistService->addTodolist("Belajar PHP");
     $todolistService->addTodolist("Belajar PHP OOP");
     $todolistService->addTodolist("Belajar PHP Database");
+    // $todolistService->showTodolist();
 
     $todolistService->showTodolist();
-
+    $todolistView->addtodolist();
+    $todolistService-> showTodolist();
     $todolistView->addTodolist();
-
     $todolistService->showTodolist();
-
-    $todolistView->addTodolist();
-
-    $todolistService->ShowTodolist();
 }
 
 function testViewRemoveTodolist(): void
 {
     $todolistRepository = new TodolistRepositoryImpl();
     $todolistService = new TodolistServiceImpl($todolistRepository);
-    $todolistView = new todolistView($todolistService);
+    $todolistView = new TodolistView($todolistService);
+
     $todolistService->addTodolist("Belajar PHP");
     $todolistService->addTodolist("Belajar PHP OOP");
     $todolistService->addTodolist("Belajar PHP Database");
 
     $todolistService->showTodolist();
-
-    $todolistView->removeTodolist();
-
+    $todolistView->addtodolist();
+    $todolistService-> showTodolist();
+    $todolistView->addTodolist();
     $todolistService->showTodolist();
-
-    $todolistView->removeTodolist();
-
-    $todolistService->showTodolist();
-
 }
 
-testViewRemoveTodolist();
+
+testShowTodolist();

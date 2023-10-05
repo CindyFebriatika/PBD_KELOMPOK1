@@ -2,10 +2,10 @@
 
 namespace View {
 
-    use Entity\Todolist;
+    
     use Service\TodolistService;
     use Helper\InputHelper;
-    use Service\TodolistServiceImpl;
+  
 
     class TodolistView
     {
@@ -44,7 +44,7 @@ namespace View {
         
         function addTodolist(): void
         {
-            echo "MENGHAPUS TODO".PHP_EOL;
+            echo "Menambah TODO".PHP_EOL;
 
             $todo = InputHelper:: input("Todo (x untuk batal)");
         if ($todo == "x"){

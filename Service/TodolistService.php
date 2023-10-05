@@ -1,9 +1,9 @@
 <?php
 namespace Service {
     use Entity\Todolist;
-    use Repository\Repository;
+    use Repository\TodolistRepository;
 
-    interface TodolistRepository
+    interface TodolistService
     {
         function showTodolist(): void;
 
@@ -13,7 +13,7 @@ namespace Service {
     
     }
 
-    class TodolistServiceImpl implements Todolist
+    class TodolistServiceImpl implements TodolistService
     {
         private TodolistRepository $todolistRepository;
 
