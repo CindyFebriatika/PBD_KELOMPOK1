@@ -11,9 +11,9 @@ namespace View {
     {
         private TodolistService $todolistService;
 
-        public function __construct(TodolistService $todolistService)
+        public function __construct(TodolistService  $todolistService)
         {
-            $this->todolistService = $todolistService;
+            $this -> todolistService = $todolistService;
         }
 
         function showTodolist(): void
@@ -62,7 +62,7 @@ namespace View {
             if($pilihan == "x"){
                 echo " Batal menghapus todo". PHP_EOL;
             } else {
-                $this ->todolistService->addTodolist($pilihan);
+                $this ->todolistService->removeTodolist($pilihan);
             }
         }
         
